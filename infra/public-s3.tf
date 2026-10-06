@@ -1,5 +1,18 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 4.0"
+    }
+  }
+}
+
+provider "aws" {
+  region = "us-east-1"
+}
+
 resource "aws_s3_bucket" "cortex_test" {
-  bucket = "cortex-test-bucket-not-deployed"
+  bucket = "cortex-appsec-test-not-deployed"
   acl    = "public-read"
 }
 
